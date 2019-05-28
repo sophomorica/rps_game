@@ -12,5 +12,18 @@ h1{
   background-color: antiquewhite
 }
 #rock{
-  
+  background-color: grey;
+  background-image: url("/images/rock.jpeg");
+  border-radius: 50%;
+  border: 2px solid black;
+}
+#paper{
+  background-image: url("/images/paper.jpeg");
+  border-radius: 50%;
+  border: 2px solid black;
+}
+#scissors{
+  background-image: url("/images/scissors.png");
+  border-radius: 50%;
+  border: 2px solid black;
 }
