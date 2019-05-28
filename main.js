@@ -13,8 +13,11 @@ for (var i = 0; i < choices.length; i++) {
     removeCards()
 
     userChoice = this.id;
+    compChoice = answerArray[Math.floor(Math.random()*answerArray.length)]
+    console.log(compChoice)
 
     let image = document.createElement("img");
+    image.className= "result";
     userView.appendChild(image);
     switch (userChoice) {
       case "rock":
@@ -26,6 +29,20 @@ for (var i = 0; i < choices.length; i++) {
       case "scissors":
         image.src = `/images/scissors.png`;
     }
+    let compImage = document.createElement("img");
+    compImage.className= "result";
+    compView.appendChild(compImage);
+    switch (compChoice) {
+      case "rock":
+        image.src = `/images/rock.jpeg`;
+        break;
+      case "paper":
+        image.src = `/images/paper.jpeg`;
+        break;
+      case "scissors":
+        image.src = `/images/scissors.png`;
+    }
+
   });
 }
 
