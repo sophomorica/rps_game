@@ -1,0 +1,16 @@
+h1{
+  text-align: center;
+}
+.game{
+  display:flex;
+  justify-content: space-around;
+  padding: 25px;
+}
+.choices{
+  height: 200px;
+  width: 200px;
+  background-color: antiquewhite
+}
+#rock{
+  
+}
