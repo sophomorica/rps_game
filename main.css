@@ -27,3 +27,15 @@ h1{
   border-radius: 50%;
   border: 2px solid black;
 }
+
+.results{
+  display: flex;
+  justify-content: space-around;
+}
+.result{
+  height: 200px;
+  width: 200px;
+  margin-top: 80px;
+  background-color: rgba(12, 88, 2, 0.384);
+  border-radius: 50%;
+}
