@@ -45,8 +45,12 @@ h1{
 }
 .paper{
   box-shadow: 3px 3px 3px green;
+  background-color: black;
   background-image: url("/images/paper.jpeg");
 }
 .scissor{
   background-image: url("/images/scissors.png");
+}
+#user{
+  
 }
