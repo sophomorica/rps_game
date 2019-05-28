@@ -1,12 +1,12 @@
 h1{
   text-align: center;
 }
-.game{
+.choices{
   display:flex;
   justify-content: space-around;
   padding: 25px;
 }
-.choices{
+.choice{
   height: 200px;
   width: 200px;
   background-color: antiquewhite
@@ -38,4 +38,15 @@ h1{
   margin-top: 80px;
   background-color: rgba(12, 88, 2, 0.384);
   border-radius: 50%;
+}
+.rock{
+  background-color: grey;
+  background-image: url("/images/rock.jpeg");
+}
+.paper{
+  box-shadow: 3px 3px 3px green;
+  background-image: url("/images/paper.jpeg");
+}
+.scissor{
+  background-image: url("/images/scissors.png");
 }
