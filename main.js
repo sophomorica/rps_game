@@ -15,7 +15,6 @@ for (var i = 0; i < choices.length; i++) {
 
     userChoice = this.id;
     compChoice = answerArray[Math.floor(Math.random() * answerArray.length)];
-    console.log("computer says " + compChoice);
 
     let image = document.createElement("img");
     image.className = "result_u";
@@ -43,26 +42,28 @@ for (var i = 0; i < choices.length; i++) {
       case "scissors":
         compImage.src = `/images/scissors.png`;
     }
-    switch ((userChoice, compChoice)) {
-      case ("rock", "paper"):
+
+    switch (userChoice) {
+      case (userChoice==="rock" && compChoice ==="paper"):
         console.log("lose");
         break;
-      case ("scissors", "paper"):
-        console.log("win");
-        break;
-      case ("paper", "scissors"):
+      case (userChoice==="paper" && compChoice ==="scissors"):
         console.log("lose");
         break;
-      case ("paper", "rock"):
-        console.log("win");
-        break;
-      case ("rock", "paper"):
+      case (userChoice==="scissors" && compChoice ==="rock"):
         console.log("lose");
         break;
-      case ("rock", "scissors"):
+      case (userChoice==="rock" && compChoice ==="scissors"):
         console.log("win");
         break;
-      case userChoice = compChoice:
+
+      case (userChoice==="paper"&& compChoice==="rock"):
+        console.log("win");
+        break;
+      case (userChoice==="scissors"&& compChoice === "paper"):
+        console.log("win");
+        break;
+      case (userChoice = compChoice):
         console.log("Draw");
         break;
     }
