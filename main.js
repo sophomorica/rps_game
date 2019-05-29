@@ -49,38 +49,31 @@ for (var i = 0; i < choices.length; i++) {
 
 
       if (userChoice==="rock" && compChoice ==="paper"){
-        console.log("lose");
-        answer.textContent = "lose"
+        answer.textContent = (userChoice+" suffocated by "+ compChoice+": you LOSE!!!!")
         the_answer.appendChild(answer)
 
       }
       if (userChoice==="paper" && compChoice ==="scissors"){ 
-        console.log("lose");
-        answer.textContent = "lose"
+        answer.textContent = (userChoice+" cut by "+ compChoice+": you LOSE!!!!")
         the_answer.appendChild(answer)
       }
       if (userChoice==="scissors" && compChoice ==="rock"){ 
-        console.log("lose");
-        answer.textContent = "lose"
+        answer.textContent = (userChoice+" crushed by "+ compChoice+": you LOSE!!!!")
         the_answer.appendChild(answer)
       }
       if (userChoice==="rock" && compChoice ==="scissors"){ 
-        console.log("win");
-        answer.textContent = "Win"
+        answer.textContent = (userChoice +" beats "+compChoice +" you Win")
         the_answer.appendChild(answer)
       }
       if (userChoice==="paper" && compChoice==="rock"){ 
-        console.log("win");
-        answer.textContent = "Win"
+        answer.textContent = (userChoice +" beats "+compChoice +" you Win")
         the_answer.appendChild(answer)
       }
       if (userChoice==="scissors" && compChoice === "paper"){ 
-        console.log("win");
-        answer.textContent = "Win"
+        answer.textContent =(userChoice +" beats "+compChoice +" you Win")
         the_answer.appendChild(answer)
       }
       if (userChoice === compChoice){ 
-        console.log("Draw");
         answer.textContent= "Draw"
         the_answer.appendChild(answer)
       }
