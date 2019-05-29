@@ -3,13 +3,11 @@ var userChoice;
 var choices = document.getElementsByClassName("choice");
 var userView = document.getElementById("user");
 var compView = document.getElementById("comp");
-var answer = document.createElement("h1")
-answer.id = "answer"
-var the_answer = document.getElementById("the_answer")
-var counter = document.createElement("p")
-counter.id = "counter"
-
-
+var answer = document.createElement("h1");
+answer.id = "answer";
+var the_answer = document.getElementById("the_answer");
+var counterP = document.getElementById("counter");
+var counter = 0;
 
 for (var i = 0; i < choices.length; i++) {
   choices[i].addEventListener("click", function() {
@@ -18,8 +16,8 @@ for (var i = 0; i < choices.length; i++) {
 
     userChoice = this.id;
     compChoice = answerArray[Math.floor(Math.random() * answerArray.length)];
-    
-    counter.textContent = 0
+
+    counter.textContent = 0;
     let image = document.createElement("img");
     image.className = "result_u";
     userView.appendChild(image);
@@ -47,47 +45,59 @@ for (var i = 0; i < choices.length; i++) {
         compImage.src = `/images/scissors.png`;
     }
 
-
-      if (userChoice==="rock" && compChoice ==="paper"){
-        answer.className = "red"
-        answer.textContent = (userChoice+" suffocated by "+ compChoice+": you LOSE!!!!")
-        the_answer.appendChild(answer)
-        
-        
-      }
-      if (userChoice==="paper" && compChoice ==="scissors"){ 
-        answer.className = "red"
-        answer.textContent = (userChoice+" cut by "+ compChoice+": you LOSE!!!!")
-        the_answer.appendChild(answer)
-      }
-      if (userChoice==="scissors" && compChoice ==="rock"){ 
-        answer.className = "red"
-        answer.textContent = (userChoice+" crushed by "+ compChoice+": you LOSE!!!!")
-        the_answer.appendChild(answer)
-      }
-      if (userChoice==="rock" && compChoice ==="scissors"){ 
-        answer.className = "green"
-        answer.textContent = (userChoice +" beats "+compChoice +" you Win")
-        the_answer.appendChild(answer)
-      }
-      if (userChoice==="paper" && compChoice==="rock"){ 
-        answer.className = "green"
-        answer.textContent = (userChoice +" beats "+compChoice +" you Win")
-        the_answer.appendChild(answer)
-      }
-      if (userChoice==="scissors" && compChoice === "paper"){ 
-        answer.className = "green"
-        answer.textContent =(userChoice +" beats "+compChoice +" you Win")
-        the_answer.appendChild(answer)
-      }
-      if (userChoice === compChoice){ 
-        answer.className = "yellow"
-        answer.textContent= "Draw"
-        the_answer.appendChild(answer)
-      }
-    })}
-  
-
+    if (userChoice === "rock" && compChoice === "paper") {
+      answer.className = "red";
+      answer.textContent =
+        userChoice + " suffocated by " + compChoice + ": you LOSE!!!!";
+      the_answer.appendChild(answer);
+      counter -= 1;
+      counterP.textContent = counter;
+    }
+    if (userChoice === "paper" && compChoice === "scissors") {
+      answer.className = "red";
+      answer.textContent =
+        userChoice + " cut by " + compChoice + ": you LOSE!!!!";
+      the_answer.appendChild(answer);
+      counter -= 1;
+      counterP.textContent = counter;
+    }
+    if (userChoice === "scissors" && compChoice === "rock") {
+      answer.className = "red";
+      answer.textContent =
+        userChoice + " crushed by " + compChoice + ": you LOSE!!!!";
+      the_answer.appendChild(answer);
+      counter -= 1;
+      counterP.textContent = counter;
+    }
+    if (userChoice === "rock" && compChoice === "scissors") {
+      answer.className = "green";
+      answer.textContent = userChoice + " beats " + compChoice + " you Win";
+      the_answer.appendChild(answer);
+      counter += 1;
+      counterP.textContent = counter;
+    }
+    if (userChoice === "paper" && compChoice === "rock") {
+      answer.className = "green";
+      answer.textContent = userChoice + " beats " + compChoice + " you Win";
+      the_answer.appendChild(answer);
+      counter += 1;
+      counterP.textContent = counter;
+    }
+    if (userChoice === "scissors" && compChoice === "paper") {
+      answer.className = "green";
+      answer.textContent = userChoice + " beats " + compChoice + " you Win";
+      the_answer.appendChild(answer);
+      counter += 1;
+      counterP.textContent = counter;
+    }
+    if (userChoice === compChoice) {
+      answer.className = "yellow";
+      answer.textContent = "Draw";
+      the_answer.appendChild(answer);
+      counterP.textContent = counter;
+    }
+  });
+}
 
 const removeUser = () => {
   let removeDiv = document.querySelector("#user");
