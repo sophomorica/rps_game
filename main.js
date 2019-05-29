@@ -3,6 +3,9 @@ var userChoice;
 var choices = document.getElementsByClassName("choice");
 var userView = document.getElementById("user");
 var compView = document.getElementById("comp");
+var answer = document.createElement("h1")
+answer.id = "answer"
+var the_answer = document.getElementById("the_answer")
 
 answerArray.forEach(function(answer) {
   console.log(answer);
@@ -43,32 +46,44 @@ for (var i = 0; i < choices.length; i++) {
         compImage.src = `/images/scissors.png`;
     }
 
-    switch (userChoice) {
-      case (userChoice==="rock" && compChoice ==="paper"):
-        console.log("lose");
-        break;
-      case (userChoice==="paper" && compChoice ==="scissors"):
-        console.log("lose");
-        break;
-      case (userChoice==="scissors" && compChoice ==="rock"):
-        console.log("lose");
-        break;
-      case (userChoice==="rock" && compChoice ==="scissors"):
-        console.log("win");
-        break;
 
-      case (userChoice==="paper"&& compChoice==="rock"):
+      if (userChoice==="rock" && compChoice ==="paper"){
+        console.log("lose");
+        answer.textContent = "lose"
+        the_answer.appendChild(answer)
+      }
+      if (userChoice==="paper" && compChoice ==="scissors"){ 
+        console.log("lose");
+        answer.textContent = "lose"
+        the_answer.appendChild(answer)
+      }
+      if (userChoice==="scissors" && compChoice ==="rock"){ 
+        console.log("lose");
+        answer.textContent = "lose"
+        the_answer.appendChild(answer)
+      }
+      if (userChoice==="rock" && compChoice ==="scissors"){ 
         console.log("win");
-        break;
-      case (userChoice==="scissors"&& compChoice === "paper"):
+        answer.textContent = "Win"
+        the_answer.appendChild(answer)
+      }
+      if (userChoice==="paper" && compChoice==="rock"){ 
         console.log("win");
-        break;
-      case (userChoice = compChoice):
+        answer.textContent = "Win"
+        the_answer.appendChild(answer)
+      }
+      if (userChoice==="scissors" && compChoice === "paper"){ 
+        console.log("win");
+        answer.textContent = "Win"
+        the_answer.appendChild(answer)
+      }
+      if (userChoice === compChoice){ 
         console.log("Draw");
-        break;
-    }
-  });
-}
+        answer.innerHTML= "Draw"
+      }
+    })}
+  
+
 
 const removeUser = () => {
   let removeDiv = document.querySelector("#user");
