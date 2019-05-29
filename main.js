@@ -10,14 +10,15 @@ answerArray.forEach(function(answer) {
 
 for (var i = 0; i < choices.length; i++) {
   choices[i].addEventListener("click", function() {
-    removeCards()
+    removeUser();
+    removeComp();
 
     userChoice = this.id;
-    compChoice = answerArray[Math.floor(Math.random()*answerArray.length)]
-    console.log(compChoice)
+    compChoice = answerArray[Math.floor(Math.random() * answerArray.length)];
+    console.log("computer says " + compChoice);
 
     let image = document.createElement("img");
-    image.className= "result";
+    image.className = "result_u";
     userView.appendChild(image);
     switch (userChoice) {
       case "rock":
@@ -30,24 +31,52 @@ for (var i = 0; i < choices.length; i++) {
         image.src = `/images/scissors.png`;
     }
     let compImage = document.createElement("img");
-    compImage.className= "result";
+    compImage.className = "result_c";
     compView.appendChild(compImage);
     switch (compChoice) {
       case "rock":
-        image.src = `/images/rock.jpeg`;
+        compImage.src = `/images/rock.jpeg`;
         break;
       case "paper":
-        image.src = `/images/paper.jpeg`;
+        compImage.src = `/images/paper.jpeg`;
         break;
       case "scissors":
-        image.src = `/images/scissors.png`;
+        compImage.src = `/images/scissors.png`;
     }
-
+    switch ((userChoice, compChoice)) {
+      case ("rock", "paper"):
+        console.log("lose");
+        break;
+      case ("scissors", "paper"):
+        console.log("win");
+        break;
+      case ("paper", "scissors"):
+        console.log("lose");
+        break;
+      case ("paper", "rock"):
+        console.log("win");
+        break;
+      case ("rock", "paper"):
+        console.log("lose");
+        break;
+      case ("rock", "scissors"):
+        console.log("win");
+        break;
+      case userChoice = compChoice:
+        console.log("Draw");
+        break;
+    }
   });
 }
 
-const removeCards = () => {
-  let removeDiv = document.querySelector(".result");
+const removeUser = () => {
+  let removeDiv = document.querySelector("#user");
+  while (removeDiv.firstChild) {
+    removeDiv.removeChild(removeDiv.firstChild);
+  }
+};
+const removeComp = () => {
+  let removeDiv = document.querySelector("#comp");
   while (removeDiv.firstChild) {
     removeDiv.removeChild(removeDiv.firstChild);
   }
