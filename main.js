@@ -49,31 +49,39 @@ for (var i = 0; i < choices.length; i++) {
 
 
       if (userChoice==="rock" && compChoice ==="paper"){
+        answer.className = "red"
         answer.textContent = (userChoice+" suffocated by "+ compChoice+": you LOSE!!!!")
         the_answer.appendChild(answer)
-
+        
+        
       }
       if (userChoice==="paper" && compChoice ==="scissors"){ 
+        answer.className = "red"
         answer.textContent = (userChoice+" cut by "+ compChoice+": you LOSE!!!!")
         the_answer.appendChild(answer)
       }
       if (userChoice==="scissors" && compChoice ==="rock"){ 
+        answer.className = "red"
         answer.textContent = (userChoice+" crushed by "+ compChoice+": you LOSE!!!!")
         the_answer.appendChild(answer)
       }
       if (userChoice==="rock" && compChoice ==="scissors"){ 
+        answer.className = "green"
         answer.textContent = (userChoice +" beats "+compChoice +" you Win")
         the_answer.appendChild(answer)
       }
       if (userChoice==="paper" && compChoice==="rock"){ 
+        answer.className = "green"
         answer.textContent = (userChoice +" beats "+compChoice +" you Win")
         the_answer.appendChild(answer)
       }
       if (userChoice==="scissors" && compChoice === "paper"){ 
+        answer.className = "green"
         answer.textContent =(userChoice +" beats "+compChoice +" you Win")
         the_answer.appendChild(answer)
       }
       if (userChoice === compChoice){ 
+        answer.className = "yellow"
         answer.textContent= "Draw"
         the_answer.appendChild(answer)
       }

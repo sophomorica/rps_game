@@ -1,6 +1,6 @@
 h1{
   text-align: center;
-  color: blue;
+
 }
 h3{
   text-align:center;
@@ -14,7 +14,8 @@ h3{
 .choice{
   height: 200px;
   width: 200px;
-  background-color: antiquewhite
+  background-color: antiquewhite;
+  box-shadow: 2px 2px 2px black;
 }
 #rock{
   background-color: grey;
@@ -75,4 +76,16 @@ h2{
 .names{
   display: flex;
   justify-content: space-around;
+}
+.red{
+  color:red;
+  text-shadow: 2px 2px 2px black;
+}
+.green{
+  color: green;
+  text-shadow: 2px 2px 2px black;
+}
+.yellow{
+  color: yellow;
+  text-shadow: 2px 2px 2px black;
 }
