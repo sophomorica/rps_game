@@ -6,10 +6,10 @@ var compView = document.getElementById("comp");
 var answer = document.createElement("h1")
 answer.id = "answer"
 var the_answer = document.getElementById("the_answer")
+var counter = document.createElement("p")
+counter.id = "counter"
 
-answerArray.forEach(function(answer) {
-  console.log(answer);
-});
+
 
 for (var i = 0; i < choices.length; i++) {
   choices[i].addEventListener("click", function() {
@@ -18,7 +18,8 @@ for (var i = 0; i < choices.length; i++) {
 
     userChoice = this.id;
     compChoice = answerArray[Math.floor(Math.random() * answerArray.length)];
-
+    
+    counter.textContent = 0
     let image = document.createElement("img");
     image.className = "result_u";
     userView.appendChild(image);
@@ -51,6 +52,7 @@ for (var i = 0; i < choices.length; i++) {
         console.log("lose");
         answer.textContent = "lose"
         the_answer.appendChild(answer)
+
       }
       if (userChoice==="paper" && compChoice ==="scissors"){ 
         console.log("lose");
@@ -79,7 +81,8 @@ for (var i = 0; i < choices.length; i++) {
       }
       if (userChoice === compChoice){ 
         console.log("Draw");
-        answer.innerHTML= "Draw"
+        answer.textContent= "Draw"
+        the_answer.appendChild(answer)
       }
     })}
   
